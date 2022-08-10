@@ -1,13 +1,17 @@
-import React from "react";
-import { Product } from "./components/Product";
-import { products } from "./data/products";
+import { Route, Routes } from "react-router-dom";
+import { Navigation } from "./components/Navigation";
+import { AboutPage } from "./pages/AboutPage";
+import { ProductsPage } from "./pages/ProductsPage";
 
 function App() {
 	return (
-		<div className="container mx-auto max-w-2xl pt-1">
-			<Product product={products[0]}/>
-			<Product product={products[1]}/>
-		</div>
+		<>
+			<Navigation />
+			<Routes>
+				<Route path="/" element={<ProductsPage />} />
+				<Route path="/about" element={<AboutPage />} />
+			</Routes>
+		</>
 	);
 }
 

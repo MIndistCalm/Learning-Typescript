@@ -19,7 +19,7 @@ export const Product = ({ product }: ProductProps) => {
 			<p className="font-bold">{product.price}</p>
 			<button
 				onClick={() => setDetails((prev) => !prev)}
-				className={btnClasses.join(' ')}
+				className={btnClasses.join(" ")}
 			>
 				{details ? "Hide details" : "Show details"}
 			</button>
@@ -27,6 +27,9 @@ export const Product = ({ product }: ProductProps) => {
 			{details && (
 				<div>
 					<p>{product.description}</p>
+					<p>
+						Rate: <span style={{fontWeight: 'bold'}}>{product?.rating?.rate}</span>
+					</p>
 				</div>
 			)}
 		</div>
